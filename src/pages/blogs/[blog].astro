@@ -1,0 +1,21 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map(post => {
+    const cleanSlug = post.slug.replace(/^\d+-/, "");
+    return {
+      params: { blog: cleanSlug }
+    };
+  });
+}
+
+const { blog } = Astro.params;
+const posts = await getCollection("blog")
+---
+<BlogLayout>
+  what
+  <post />
+</BlogLayout>

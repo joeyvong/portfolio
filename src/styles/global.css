@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+    --color-text: hsl(0,0,92);
+    --color-text-emph: hsl(0,0,98);
+
+    --color-background: hsl(0,0,5);
+    --color-background-emph: hsl(0,0,15);
+
+    --color-highlight-emph: #DC143C;
+}
+
+.clickable {
+    text-emphasis-color: rgb(0, 0, 223);
+}
+
+html {
+    overflow: auto;
+}

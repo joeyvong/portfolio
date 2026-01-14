@@ -55,3 +55,5 @@ Ideas:
     - Elemental reactions guides and whatnot
     - Ideas about the Genshin story and philosophy behind it
     - Ideas about AI?
+
+SVG Icons sourced from SVGRepo

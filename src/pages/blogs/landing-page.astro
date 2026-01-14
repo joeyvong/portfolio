@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/GeneralLayout.astro';
+const title = "Blog List";
+---
+
+<Layout title={title}>
+<h1>Blogs about tech and software:</h1>
+<ol class="max-w-md space-y-1 text-body list-disc list-inside mb-2">
+    <li><a href="./first-blog">First blog entry</a></li>
+    <li><a href="./001_first_blog/001_first_blog">The job market and me (and probably many others)</a></li>
+    <!-- <li> </li>
+    <li> </li> -->
+</ol>
+
+<h1>Blogs about everything else:</h1>
+<ol class="max-w-md space-y-1 text-body list-disc list-inside">
+    <li><a href="./001_first_blog/001_first_blog">Importance of stories</a></li>
+    <li><a href="./001_first_blog/001_first_blog">I'm not good at cooking</a></li>
+    <!-- <li> </li>
+    <li> </li> -->
+</ol>
+</Layout>
+
+
+
+
+
+<!-- ---
+import { getCollection } from "astro:content";
+const posts = await getCollection("blogs");
+
+const { slug } = Astro.params;
+const entry = posts.find((p) => p.slug === slug);
+
+if (!entry) throw new Error("Blog not found");
+
+const { Content } = await entry.render();
+---
+
+<Content /> -->

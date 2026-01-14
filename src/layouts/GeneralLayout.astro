@@ -1,0 +1,42 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+const {
+	title = "default"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-background">
+		<Header/>
+		<main>
+			<slot/>
+		</main>
+		<Footer/>
+	</body>
+</html>
+
+<style>
+	html, body {
+		margin: 0;
+	}
+
+	body {
+		min-height: 100vh;
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+	}
+
+	main {
+		margin: 2em 5% 2em;
+	}
+</style>
