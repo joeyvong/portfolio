@@ -1,7 +1,7 @@
 ---
-title: "First Blog"
+title: "First Blog Entry"
 slug: "first-blog"
-date: 2024-11-27
+date: 2025-11-27
 tags: ["self-learning", "webdev", "reflection"]
 ---
 I don't know if I should insert a general introduction you'd see on

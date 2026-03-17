@@ -1,0 +1,32 @@
+---
+title: "The time I've spent playing games"
+slug: "game-hours"
+date: 2026-3-5
+tags: ["games", "reflection"]
+---
+I recently requested my personal data from Hoyoverse just because I was curious,
+and one of the stats that they track is hours spent in game. I've come to learn that
+I had spent around 2068 hours just playing Genshin Impact. This does not include the
+hours I've spent playing through other Hoyoverse games and this kind of made me reflect
+on just how much of my life I had spent playing video games.
+
+Of course, hobbies can take up a good chunk of someone's life especially if they are
+passionate about the activity. There's quite a few ways to see how much money has been
+spent on the hobby, but to find how much time is spent on the hobby is quite different
+and hard in many cases. However, this is not true for video games, especially those
+that are SaaS or platforms that utilize SaaS. For example, I had played many hours of
+video games on my computer, and by simply querying some APIs or requesting personal
+data, I can get the time I spent on many games (soemtimes the platform just shows it
+already). Here's a few of the games I spent the most time in:
+- League of Legends: 4922 Hours (noobhours.com through Riot API)
+- Genshin Impact: 2068 Hours (personal data request)
+- Terraria: 1048 Hours (steam recorded data)
+
+This is just a few of the games I've played a lot, with many others still unknown to me.
+And seeing these numbers, I thought that maybe I should be doing something else instead
+of playing these video games. And maybe I should, but I think a lot of my personality
+and my relationships and friends have been built on these numbers. Maybe not to the
+extent that I have spent, but I doubt people would trade in those hours doing what they
+had loved doing, and I agree. A lot of fond memories and happy times I can think of
+were spent playing video games. So yeah, these numbers will probably grow but I don't
+think that's necessarily a bad thing.

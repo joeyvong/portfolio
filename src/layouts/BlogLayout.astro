@@ -1,21 +1,39 @@
 ---
 import '../styles/global.css'
-import '../components/Header.astro'
-import Header from '../components/Header.astro';
-const {title, date, tags} = Astro.props;
+import GeneralLayout from './GeneralLayout.astro';
+
+interface Props {
+  title: string;
+  date: Date;
+  description: string;
+  tags: string[];
+}
+
+const { title, date, description, tags } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="generator" content={Astro.generator} />
-	<title>Astro Basics</title>
-</head>
-<body>
-	<Header/>
-	<slot />
-</body>
-</html>
+<GeneralLayout title={title} description={description}>
+  <article class="blog-container">
+	<h1 class="title-style">{title}</h1>
+	<h2>Date: {date.toDateString()}</h2>
+	<br>
+    <slot/>
+  </article>
+</GeneralLayout>
+
+<style is:global>
+  .blog-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .blog-container p {
+	margin-bottom: 1.2em;
+  	line-height: 1.6;
+  }
+  
+  .title-style {
+	font-size: x-large;
+  }
+
+</style>

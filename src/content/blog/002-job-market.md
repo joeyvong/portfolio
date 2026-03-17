@@ -1,0 +1,14 @@
+---
+title: "The Job Market and Me (and Probably Many Others)"
+slug: "job-market"
+date: 2025-12-05
+tags: ["reflection", "job"]
+---
+
+This is just a post about me ranting about the current job market at the end of
+2025. More or less, it is indeed, not great. As someone who is in pursuit of a
+job, it seems that I have viewed the same job requisition from companies over
+and over again. I'm not sure about how the other side handles things, but it
+does feel like I am throwing my resume at brick walls sometimes.
+
+That's it. That's the entire blog post.
