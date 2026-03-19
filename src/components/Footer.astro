@@ -2,17 +2,17 @@
 import { Icon } from 'astro-icon/components';
 ---
 <footer class="end-page">
-  <div class="content gap-4">
-    Joey Vongphasouk
+  <div class="content">
+    Joey Vongphsouk
 
-    <nav class="flex gap-2">
-      <a href="https://github.com/joeyvong" target="_blank">
-        <Icon name="Github" width="40" height="40"/>
-      </a>
-      <a href="https://www.linkedin.com/in/joey-vongphasouk" target="_blank">
+    <nav class="socials-images">
+      <a class="image-clickable" href="https://www.linkedin.com/in/joey-vongphasouk" target="_blank">
         <Icon name="Linkedin" width="40" height="40"/>
       </a>
-      <a href="mailto:you@email.com">
+      <a class="image-clickable" href="https://github.com/joeyvong" target="_blank">
+        <Icon name="Github" width="40" height="40"/>
+      </a>
+      <a class="image-clickable" href="mailto:you@email.com">
         <Icon name="Email" width="40" height="40"/>
       </a>
     </nav>
@@ -26,16 +26,18 @@ import { Icon } from 'astro-icon/components';
     min-height: 200px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   .content {
     display: flex;
     align-items: center;
+    gap: 24px;
   }
 
-  /* .socials {
+  .socials-images {
     display: flex;
-  } */
+    gap: 12px;
+  }
 </style>

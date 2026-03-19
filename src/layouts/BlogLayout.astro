@@ -1,39 +1,47 @@
 ---
-import '../styles/global.css'
 import GeneralLayout from './GeneralLayout.astro';
 
 interface Props {
-  title: string;
-  date: Date;
-  description: string;
-  tags: string[];
+	title: string;
+	date: Date;
+	description: string;
+	tags: string[];
 }
 
 const { title, date, description, tags } = Astro.props as Props;
 ---
 
 <GeneralLayout title={title} description={description}>
-  <article class="blog-container">
-	<h1 class="title-style">{title}</h1>
-	<h2>Date: {date.toDateString()}</h2>
-	<br>
-    <slot/>
-  </article>
+	<article class="blog-container">
+		<a href="." class="back-button">← Back to all blogs</a>
+		<h1>{title}</h1>
+		<h2>Date: {date.toDateString()}</h2>
+		<br>
+		<slot/>
+	</article>
 </GeneralLayout>
 
-<style is:global>
-  .blog-container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+<style>
+	.back-button {
+		background-color: #eee;
+		border-radius:21px;
+		display:inline-block;
+		cursor:pointer;
+		font-family:Arial;
+		font-size:16px;
+		padding:8px 20px;
+		text-decoration:none;
+		color: black;
+	}
+	
+	.back-button:hover {
+		background-color: color-mix(in srgb, #eee, black 20%);
+	}
 
-  .blog-container p {
-	margin-bottom: 1.2em;
-  	line-height: 1.6;
-  }
-  
-  .title-style {
-	font-size: x-large;
-  }
-
+	.back-button:active {
+		position:relative;
+		top:1px;
+	}
 </style>
+
+<a href="#" class="myButton">Back to all blogs</a>

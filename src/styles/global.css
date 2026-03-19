@@ -1,19 +1,165 @@
-@import "tailwindcss";
-
-@theme {
-    --color-text: hsl(0,0,92);
-    --color-text-emph: hsl(0,0,98);
-
-    --color-background: hsl(0,0,5);
-    --color-background-emph: hsl(0,0,15);
-
-    --color-highlight-emph: #DC143C;
+/* css file is gen by ai */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.clickable {
-    text-emphasis-color: rgb(0, 0, 223);
+html,
+body {
+    height: 100%;
 }
 
-html {
-    overflow: auto;
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+ul,
+ol {
+    list-style-position: inside;
+}
+
+/* Reset links */
+a {
+    /* text-decoration: none;
+    color: inherit; */
+}
+
+/* Media elements */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Form elements inherit font */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* ===== TYPOGRAPHY (Tailwind-like defaults) ===== */
+
+body {
+    font-family:
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans",
+        sans-serif;
+
+    background-color: #ffffff;
+    color: #111827; /* Tailwind gray-900 */
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Paragraph spacing */
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* ===== BLOG CONTENT STYLING ===== */
+
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Headings */
+.blog-container h1 {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.blog-container h2 {
+    font-size: 1.5rem;
+    margin-top: 1.75rem;
+}
+
+.blog-container h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+/* Paragraphs */
+.blog-container p {
+    line-height: 1.7;
+}
+
+/* Lists */
+.blog-container ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 1em 0;
+}
+
+.blog-container ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+    margin: 1em 0;
+}
+
+.blog-container li {
+    margin: 0.25em 0;
+}
+
+/* Links */
+.blog-container a {
+    color: #2563eb; /* Tailwind blue-600 */
+}
+
+.blog-container a:hover {
+    text-decoration: underline;
+}
+
+/* Images */
+.blog-container img {
+    border-radius: 8px;
+    margin: 1.5em 0;
+}
+
+/* Code blocks */
+.blog-container code {
+    background: #f3f4f6;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.blog-container pre {
+    background: #111827;
+    color: #f9fafb;
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.image-clickable {
+    text-decoration: none;
+    color: inherit;
 }
