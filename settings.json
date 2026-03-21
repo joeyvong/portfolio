@@ -1,7 +1,4 @@
 {
-  "tailwindCSS.includeLanguages": {
-    "astro": "html"
-  },
   "editor.suggestOnTriggerCharacters": true,
   "editor.quickSuggestions": {
     "other": true,
