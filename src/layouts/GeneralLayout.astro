@@ -24,10 +24,10 @@ const {
 		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-background">
+	<body>
 		<Header/>
 		<main>
-			<slot>Default text test</slot>
+			<slot/>
 		</main>
 		<Footer/>
 	</body>
@@ -39,12 +39,15 @@ const {
 	}
 
 	body {
-		min-height: 100vh;
-		display: grid;
-		grid-template-rows: auto 1fr auto;
+		display: flex;
+		flex-direction: column;
+		min-height: 100dvh;
+  		height: auto;
 	}
 
 	main {
-		margin: 2em 5% 2em;
+		margin: 2em 6%;
+		flex: 1;
+		min-height: 0;
 	}
 </style>

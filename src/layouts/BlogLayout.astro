@@ -32,10 +32,13 @@ const { title, date, description, tags } = Astro.props as Props;
 		padding:8px 20px;
 		text-decoration:none;
 		color: black;
+
+		transition: background-color 100ms linear;
 	}
 	
 	.back-button:hover {
 		background-color: color-mix(in srgb, #eee, black 20%);
+		transition: background-color 100ms linear;
 	}
 
 	.back-button:active {
