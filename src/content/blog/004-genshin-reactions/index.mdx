@@ -1,0 +1,54 @@
+---
+title: "Ranting About Genshin Reactions: Pyro"
+slug: "genshin-reactions"
+date: 2026-2-24
+tags: ["genshin", "math"]
+---
+import { Image } from "astro:assets";
+import chart from "./rxn_chart.webp";
+
+One of my favorite games by far is Genshin Impact. I've played this game for around 5 to 6 years now and I don't see myself stopping any time soon. Well, except maybe some of the content I might stop doing sooner or later, and that is endgame content. I love the way Genshin presents the world, its stories, and its characters. I also love how they handled the combat except in recent times. But a lot of the people I talk to don't really care about how combat is handled in Genshin, so why not just send my thoughts into the void of the internet here? Also, this blog post is a test to add images into my blogs (yay).
+
+Before we can talk about pyro reactions, let me first introduce all reactions at a broad level. There are currently 7 elements in Genshin Impact:
+- Pyro
+- Hydro
+- Electro
+- Cryo
+- Anemo
+- Geo
+- Dendro
+
+Characters in the game can apply these elements onto an enemy, where the first element applied to an enemy will linger on the enemy based on the gauge unit of the attack. That is, each elemental attack has an associated guage unit with it that that certain element onto the enemy. Common gauge units in the game are 1U, 1.5U, 2U, 4U, and 8U of an element. Additionally, if this attack is used on an enemy with no current element, the resulting element will be taxed by 20%. This is important as the gauge unit of an element determines how long that element will stay on the enemy as well as how many times you can react it with. There's a bunch of game calculation behind the scenes but all of this culminates in the following chart describing how long an element stays on the enemy:
+<div class="blog-content-wrapper">
+    | Gauge Unit(U) | Time(s) |
+    |:-----------|:--------|
+    | 1 | 9.5 |
+    | 1.5 | 10.75 |
+    | 2 | 12 |
+    | 4 | 17 |
+    | 8 | 27 |
+</div>
+Note that applying the same element onto an enemy will refresh the duration of the aura but utilize the decay rate of the first attack. For example, attacking with an attack that has a GU of 1 and then applying a similar element with an GU of 8 will increase the duration dramatically from 27 seconds as the decay rate will be based off of the first attack.
+
+This similar refresh rate doesn't apply to pyro though, which means we can forgo the elemental decay rate of refreshing with similar elements (since we are talking about pyro reactions here, specifically talking about reacting with hydro, cryo, and electro). The following chart explains most of the available reactions seen in Genshin Impact. Note that characters/attacks that give an enemy an aura are commonly referred to as catalysts, and characters/attacks that trigger the reaction are called reactors.
+
+<figure class="blog-content-wrapper">
+  <Image src={chart} alt="Genshin Reactions" class="blog-image"/>
+  <figcaption>Chart made by u/3ar0n on reddit</figcaption>
+</figure>
+
+To split blog posts evenly, I will only talk about the vaporize, melt, and overloaded reactions. 
+
+Starting with vaporize, this is the reaction caused by a hydro attack onto an enemy with pyro aura, or pyro attack onto an enemy with hydro aura. Vaporize additionally is a multiplicative reaction where the reactor's crit is factored into the overall damage calculation of the attack (different from additive reactions like spread or transformative reactions like overload). There are two different forms of vaporize commonly referred to as forward vape and reverse vape. Reverse vape, the more common reaction, involves using a hydro catalyst and a pyro reactor where the pyro reactor's attack will be multiplied by 1.5x. Forward vape, on the other hand, will use a pyro catalyst and hydro reactor, where the hydro reactor's attack will be multiplied by 2x.
+
+This suggests that we should always use forward vape as such has a higher damage multiplier. However reverse vape can be more practical due to how reverse vape consumes less aura than forward vape. In other words, 1U of pyro attacks onto an enemy with hydro aura will only consume 0.5U of the aura, whilst a forward vape with 1U of hydro attack will consume 2U of pyro aura.
+
+A similar idea is used in pyro reactions with the cryo element. This reaction is known as melt, and is similar to vape in that such is a multiplicative reaction and has both forward and reverse versions where the reactor can deal 1.5x or 2x their damage with the reaction. Here, however, reverse melt involves using a cryo attack onto a pyro aura (with similar gauge unit consumption with 1U cryo consuming 0.5U pyro aura). Forward melt follows in a similar pattern with a pyro attack onto a cryo aura dealing 2x damage, however consuming twice the used gauge units.
+
+Lastly, the overload reaction is when pyro and electro are used in a reaction. This is different from the previous reactions discussed where overload is instead a transformative reaction. Rather than amplifying/multiplying the reactor's attack, the reaction causes an explosion dealing pyro damage. Transformative reactions scale only off of the character's level and elemental mastery, meaning crit stats do not amplify this reaction. Additionally, transformative reactions can ignore the enemies' defense.
+
+There are additional reactions that pyro is involved in (even ones with the same elements covered here), but this is to say that pyro as an element is largely multilpicative focused. This is why current Genshin DPS is shaped around Mavuika, someone that has inheritly large damage multipliers, high crit scaling, and managable ICDs (time between elemental applications). Coupled with a forward reaction through melt, Mavuika's damage is effectively doubled, causing the 100K DPS showcases seen today.
+
+Pyro has always been seen in the meta back when the game started. Starting with Hu Tao, which utilized a reverse vape setup, ending with forward melt Mavuika today, pyro has always been a good standard to use for good damage. However, it is intersting to see how overload has become an actual good reaction over the years. Powered by a 4-star character in Chevreuse who can shred resistances (something that transformative reactions cannot ignore), as well as characters with low ICD who can proc said reactions easily (Varesa and Mavuika), it's cool to see this reaction that I personally hated before become a standard again.
+
+Alright cool, that's the blog.

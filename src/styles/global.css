@@ -159,7 +159,36 @@ p {
     overflow-x: auto;
 }
 
+.blog-image {
+    display: inline;
+    max-width:60%;
+    max-height:80%;
+    width: auto;
+    height: auto;
+}
+
+.blog-content-wrapper {
+    display: block;
+    text-align: center;
+}
+.blog-content-wrapper figcaption {
+    margin-top: 0%;
+}
+
 .image-clickable {
     text-decoration: none;
     color: inherit;
+}
+
+.blog-container table {
+    display: inline;
+    align-items: center;
+    border-collapse: collapse;
+}
+
+.blog-container th,
+.blog-container td {
+  border: 1px solid #333;
+  padding: 0.5rem;
+  text-align: left;
 }
