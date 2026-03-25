@@ -12,6 +12,7 @@ const { title, date, description, tags } = Astro.props as Props;
 ---
 
 <GeneralLayout title={title} description={description}>
+	<button id="scroll-to-top-button">↑</button>
 	<article class="blog-container">
 		<a href="." class="back-button">← Back to all blogs</a>
 		<h1>{title}</h1>
@@ -20,6 +21,37 @@ const { title, date, description, tags } = Astro.props as Props;
 		<slot/>
 	</article>
 </GeneralLayout>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const btn = document.getElementById("scroll-to-top-button");
+		if (!btn) return;
+		let visible = false;
+
+		window.addEventListener("scroll", () => {
+			console.log("tester")
+			if (window.scrollY > 300 && !visible) {
+				btn.classList.add("visible");
+      			setTimeout(() => {
+					btn.classList.add("interactive");
+				}, 400);
+				visible = true;
+			}
+			
+			if (window.scrollY < 300 && visible) {
+				btn.classList.remove("interactive");
+				btn.classList.remove("visible");
+				visible = false;
+			}
+		});
+
+		btn.addEventListener("click", () => {
+			btn.classList.remove("interactive");
+			btn.classList.remove("visible");
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		});
+	});
+</script>
 
 <style>
 	.back-button {
@@ -33,16 +65,49 @@ const { title, date, description, tags } = Astro.props as Props;
 		text-decoration:none;
 		color: black;
 
-		transition: background-color 100ms linear;
+		transition: background-color 50ms linear;
 	}
 	
 	.back-button:hover {
 		background-color: color-mix(in srgb, #eee, black 20%);
-		transition: background-color 100ms linear;
+		transition: background-color 50ms linear;
 	}
 
 	.back-button:active {
 		position:relative;
 		top:1px;
+	}
+
+	#scroll-to-top-button {
+		position: fixed;
+		right: 2rem;
+		bottom: 2rem;
+
+		aspect-ratio: 1;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		padding: 0 2em;
+		border: none;
+		background-color: #eee;
+
+		transform: translateY(150%);
+		transition: transform 400ms ease, background-color 50ms linear;
+
+		pointer-events: none;
+
+		/* transform: translateY(-50%) translateX(150%);
+		transition: transform 0.3s ease; */
+	}
+
+	#scroll-to-top-button:hover {
+		background-color: color-mix(in srgb, #eee, black 20%);
+		transition: background-color 50ms linear;
+	}
+	#scroll-to-top-button.visible {
+		transform: translateY(0);
+	}
+	#scroll-to-top-button.interactive {
+		pointer-events: auto;
 	}
 </style>
