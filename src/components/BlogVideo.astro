@@ -1,0 +1,13 @@
+---
+interface Props {
+  src: any;
+  caption?: string;
+}
+
+const { src, caption } = Astro.props as Props;
+---
+
+<figure class="blog-content-wrapper">
+    <iframe src={src} class="blog-video"></iframe>
+    {caption && <figcaption>{caption}</figcaption>}
+</figure>

@@ -4,7 +4,7 @@ slug: "genshin-reactions"
 date: 2026-2-24
 tags: ["genshin", "math"]
 ---
-import { Image } from "astro:assets";
+import BlogImage from '/src/components/BlogImage.astro';
 import chart from "./rxn_chart.webp";
 
 One of my favorite games by far is Genshin Impact. I've played this game for around 5 to 6 years now and I don't see myself stopping any time soon. Well, except maybe some of the content I might stop doing sooner or later, and that is endgame content. I love the way Genshin presents the world, its stories, and its characters. I also love how they handled the combat except in recent times. But a lot of the people I talk to don't really care about how combat is handled in Genshin, so why not just send my thoughts into the void of the internet here? Also, this blog post is a test to add images into my blogs (yay).
@@ -32,10 +32,11 @@ Note that applying the same element onto an enemy will refresh the duration of t
 
 This similar refresh rate doesn't apply to pyro though, which means we can forgo the elemental decay rate of refreshing with similar elements (since we are talking about pyro reactions here, specifically talking about reacting with hydro, cryo, and electro). The following chart explains most of the available reactions seen in Genshin Impact. Note that characters/attacks that give an enemy an aura are commonly referred to as catalysts, and characters/attacks that trigger the reaction are called reactors.
 
-<figure class="blog-content-wrapper">
-  <Image src={chart} alt="Genshin Reactions" class="blog-image"/>
-  <figcaption>Chart made by u/3ar0n on reddit</figcaption>
-</figure>
+<BlogImage
+	src={chart}
+	alt="Genshin Reactions"
+	caption="Chart made by u/3ar0n on reddit"
+/>
 
 To split blog posts evenly, I will only talk about the vaporize, melt, and overloaded reactions. 
 

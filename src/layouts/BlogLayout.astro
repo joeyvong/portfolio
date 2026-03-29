@@ -14,7 +14,7 @@ const { title, date, description, tags } = Astro.props as Props;
 <GeneralLayout title={title} description={description}>
 	<button id="scroll-to-top-button">↑</button>
 	<article class="blog-container">
-		<a href="." class="back-button">← Back to all blogs</a>
+		<a href="./" class="back-button">← Back to all blogs</a>
 		<h1>{title}</h1>
 		<h2>Date: {date.toDateString()}</h2>
 		<br>
@@ -52,62 +52,3 @@ const { title, date, description, tags } = Astro.props as Props;
 		});
 	});
 </script>
-
-<style>
-	.back-button {
-		background-color: #eee;
-		border-radius:21px;
-		display:inline-block;
-		cursor:pointer;
-		font-family:Arial;
-		font-size:16px;
-		padding:8px 20px;
-		text-decoration:none;
-		color: black;
-
-		transition: background-color 50ms linear;
-	}
-	
-	.back-button:hover {
-		background-color: color-mix(in srgb, #eee, black 20%);
-		transition: background-color 50ms linear;
-	}
-
-	.back-button:active {
-		position:relative;
-		top:1px;
-	}
-
-	#scroll-to-top-button {
-		position: fixed;
-		right: 2rem;
-		bottom: 2rem;
-
-		aspect-ratio: 1;
-		border-radius: 50%;
-		display: grid;
-		place-items: center;
-		padding: 0 2em;
-		border: none;
-		background-color: #eee;
-
-		transform: translateY(150%);
-		transition: transform 400ms ease, background-color 50ms linear;
-
-		pointer-events: none;
-
-		/* transform: translateY(-50%) translateX(150%);
-		transition: transform 0.3s ease; */
-	}
-
-	#scroll-to-top-button:hover {
-		background-color: color-mix(in srgb, #eee, black 20%);
-		transition: background-color 50ms linear;
-	}
-	#scroll-to-top-button.visible {
-		transform: translateY(0);
-	}
-	#scroll-to-top-button.interactive {
-		pointer-events: auto;
-	}
-</style>

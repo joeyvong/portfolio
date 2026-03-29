@@ -6,43 +6,20 @@ const title = "Blog List";
 const description = "Landing page for my blogs.";
 const posts = await getCollection("blog");
 const sortedPosts = posts.sort(
-  (a, b) => a.data.date.getTime() - b.data.date.getTime()
+	(a, b) => a.data.date.getTime() - b.data.date.getTime()
 );
 ---
 
 <Layout title={title} description={description}'>
-
-
-
-<h1>Blogs:</h1>
-<h2>Filters: todo lol</h2>
-<ol class="max-w-md space-y-1 text-body list-disc list-inside mb-2">
-  {sortedPosts.map((post) => (
-    <li>
-      <a href={`/blogs/${post.data.slug}`}>
-        {post.data.title}
-      </a>
-    </li>
-  ))}
-</ol>
-
-
+	<h1>Blogs:</h1>
+	<h2>Filters: todo lol</h2>
+	<ol class="max-w-md space-y-1 text-body list-disc list-inside mb-2">
+		{sortedPosts.map((post) => (
+			<li>
+				<a href={`/blogs/${post.data.slug}`}>
+					{post.data.title}
+				</a>
+			</li>
+		))}
+	</ol>
 </Layout>
-
-
-
-
-
-<!-- ---
-import { getCollection } from "astro:content";
-const posts = await getCollection("blogs");
-
-const { slug } = Astro.params;
-const entry = posts.find((p) => p.slug === slug);
-
-if (!entry) throw new Error("Blog not found");
-
-const { Content } = await entry.render();
----
-
-<Content /> -->

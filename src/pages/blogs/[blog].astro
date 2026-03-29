@@ -4,20 +4,20 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 const { blog } = Astro.params;
 const post = await getEntry("blog", blog);
 if (!post) {
-  throw new Error(`Post not found: ${blog}`);
+	throw new Error(`Post not found: ${blog}`);
 }
 const { Content } = await render(post);
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map(post => {
-    return {
-      params: { blog: post.data.slug }
-    };
-  });
+	const posts = await getCollection('blog');
+		return posts.map(post => {
+			return {
+			params: { blog: post.data.slug }
+		};
+	});
 }
 
 ---
 <BlogLayout title={post.data.title} date={post.data.date}>
-  <Content />
+	<Content />
 </BlogLayout>
