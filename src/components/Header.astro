@@ -1,12 +1,39 @@
 ---
+import { Icon } from "astro-icon/components";
+
 
 ---
 <header>
     <a href="/" class="header-link">Joey Vongphasouk</a>
-    <nav class="rs-header-navbar">
+
+    <div class="burger-menu" id="burger-btn">
+        <Icon name="BurgerMenu" width="40" height="40"/>
+    </div>
+
+    <nav class="rs-header-navbar" id="navbar">
+        <a href="./blogs" class="header-link">Blogs</a>
         <a href="./projects" class="header-link">Projects</a>
         <a href="./about" class="header-link">About</a>
         <a href="./now" class="header-link">Now</a>
         <a href="./contact" class="header-link">Contact</a>
     </nav>
 </header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const burgerBtn = document.getElementById("burger-btn");
+        let isMenuOpen = false;
+        if (!burgerBtn) return;
+
+        burgerBtn.addEventListener("click", () => {
+            if (isMenuOpen) {
+                burgerBtn.classList.remove("active");
+                console.log("clicked")
+                isMenuOpen = false;
+            } else {
+                burgerBtn.classList.add("active");
+                isMenuOpen = true;
+            }
+        });
+    });
+</script>

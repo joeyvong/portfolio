@@ -14,7 +14,7 @@ const { title, date, description, tags } = Astro.props as Props;
 <GeneralLayout title={title} description={description}>
 	<button id="scroll-to-top-button">↑</button>
 	<article class="blog-container">
-		<a href="./" class="back-button">← Back to all blogs</a>
+		<a href="/blogs" class="back-button">← Back to all blogs</a>
 		<h1>{title}</h1>
 		<h2>Date: {date.toDateString()}</h2>
 		<br>
